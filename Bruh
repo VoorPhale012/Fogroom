@@ -50,7 +50,7 @@ local vu17 = {
        Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
 }
 local vu18 = {
-    ModuleEvents = require(vu5.ClientModules.Module_Events),
+    ModuleEvents = require(vu5.ModulesClient.Module_Events),
     MainGame = require(vu9.PlayerGui.MainUI.Initiator.Main_Game)
 }
 local vu19 = {}
