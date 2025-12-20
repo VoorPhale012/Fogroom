@@ -922,7 +922,6 @@ spawner.Run = function(entityTable)
                         v83.Parent = game.Workspace
                         v83.Name = "CommonSenseClone"
                         v81.Entity.CFrame = v83.CommonSenseNew.CFrame
-                        vu51:Destroy()
                         v82:Destroy()
                         Color3.fromRGB()
                         local v84 = ColorSequence.new({
