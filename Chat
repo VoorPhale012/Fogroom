@@ -9,7 +9,7 @@
             |___/                                                   |___/         |_|
 ]]--
 
-if VynixuEntitySpawnerV4 then return VynixuEntitySpawnerV4 end
+if VynixuEntitySpawnerV10 then return VynixuEntitySpawnerV10 end
 
 -- Services
 local Players = game:GetService("Players")
@@ -1185,5 +1185,5 @@ if not vynixu_SpawnerLoaded then
 end
 
 -- Return spawner
-getgenv().VynixuEntitySpawnerV4 = spawner
+getgenv().VynixuEntitySpawnerV10 = spawner
 return spawner
