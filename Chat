@@ -896,7 +896,7 @@ spawner.Run = function(entityTable)
 							if c.Enabled and c.Range > 0 and localHum.Health > 0 and not localChar:GetAttribute("Hiding") and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
  if game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") then
                     local v77 = game:GetService("TweenService")
-                    vu51:SetAttribute("NoAI", true)
+                    
                     local v78 = game.Players.LocalPlayer.Character.Crucifix.Handle:Clone()
                     game.Players.LocalPlayer.Character.Crucifix:Destroy()
                     v78.Parent = game.Workspace
