@@ -388,7 +388,6 @@ achievementGiver({
                         })
               
 end
-end
 
 function PlayerIsProtected()
 	return (tick() - lastRespawn) <= localPlayer:GetAttribute("SpawnProtection")
