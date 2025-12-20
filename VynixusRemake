@@ -9,7 +9,7 @@
             |___/                                                   |___/         |_|
 ]]--
 
-if VynixuEntitySpawnerV4 then return VynixuEntitySpawnerV4 end
+if VynixuEntitySpawnerV3 then end
 
 -- Services
 local Players = game:GetService("Players")
@@ -40,7 +40,7 @@ local vynixuModules = {
 	Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
 }
 local assets = {
-	Repentance = LoadCustomInstance("https://raw.githubusercontent.com/VoorPhale012/Crucifix/refs/heads/main/repeeeee.rbxm?raw=true")
+	Repentance = LoadCustomInstance("https://raw.githubusercontent.com/Voor-Pr00/Crucifix/refs/heads/main/repee.rbxm?raw=true")
 }
 local moduleScripts = {
 	Module_Events = require(ReplicatedStorage.ModulesClient.Module_Events),
@@ -278,7 +278,7 @@ function PlayerHasItemEquipped(name)
 end
 
 function CrucifixEntity(entityTable, tool)
-	local model = entityTable.Model
+        local model = entityTable.Model
 	local config = entityTable.Config
 
 	local resist = config.Crucifixion.Resist
@@ -324,7 +324,7 @@ function CrucifixEntity(entityTable, tool)
 	repentance.Parent = workspace
 	sound:Play()
 game.Workspace.RepentanceNEW.Crucifix.Sound.Volume = 0
-game.Workspace.RepentanceNEW.Crucifix.Color = Color3.fromRGB(255, 255, 255)
+game.Workspace.RepentanceNEW.Crucifix.Color = Color3.fromRGB(255, 0, 0)
 game.Workspace.RepentanceNEW.Crucifix.ExplodeParticle.Brightness = 0.1
 
 local crucifixTool = character:WaitForChild("Crucifix",10000000000000000000000000000000)
@@ -349,7 +349,7 @@ function CustomGitSound(soundlink, vol, filename)
     local sound = Instance.new("Sound")
     sound.SoundId = GitAud(soundlink, filename)
     sound.Parent = workspace
-    sound.Volume = 2.5
+    sound.Volume = 3
    sound:Play()
 end
 
@@ -364,10 +364,10 @@ local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 ---====== Display achievement ======---
 achievementGiver({
-    Title = "Im just using my common sense.",
-    Desc = "Let me find the books alone.",
-    Reason = "Used Crucifix on Common Sense",
-    Image = "rbxassetid://139528160080039"
+    Title = "You put a smile on my face.",
+    Desc = "You’re annoying",
+    Reason = "Used Crucifix on Smiler",
+    Image = "rbxassetid://99667486602585"
 })
 	end)
 
@@ -417,7 +417,7 @@ achievementGiver({
 		shaker:StartFadeOut(3)
 		task.spawn(function()
 			local color = Instance.new("Color3Value")
-			color.Value = Color3.fromRGB(255, 255, 255)
+			color.Value = Color3.fromRGB(255, 0, 0)
 
 			local tween = TweenService:Create(color, TweenInfo.new(0.5, Enum.EasingStyle.Sine), { Value = Color3.fromRGB(255, 116, 130) })
 			tween:Play()
@@ -544,7 +544,7 @@ function FixRoomLights(room)
     end
     
     -- Set room ambient
-    require(ReplicatedStorage.ModulesClient.Module_Events).toggle(room, true, ambientStorage[room])
+    require(ReplicatedStorage.ClientModules.Module_Events).toggle(room, true, ambientStorage[room])
 
     -- Fix lights
     local stuff = {}
@@ -894,22 +894,38 @@ spawner.Run = function(entityTable)
 						if not model:GetAttribute("Paused") and not usedCrucifix then
 							local c = config.Damage
 							if c.Enabled and c.Range > 0 and localHum.Health > 0 and not localChar:GetAttribute("Hiding") and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
- if game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") then
+if game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") then
                     local v77 = game:GetService("TweenService")
-                    vu51:SetAttribute("NoAI", true)
                     local v78 = game.Players.LocalPlayer.Character.Crucifix.Handle:Clone()
                     game.Players.LocalPlayer.Character.Crucifix:Destroy()
                     v78.Parent = game.Workspace
                     v78.Name = "cruxy"
                     v78.Anchored = true
-                    v78.Color = Color3.fromRGB(255, 255, 255)
+                    v78.Color = Color3.fromRGB(255, 86, 86)
                     v78.Material = Enum.Material.Neon
                     v77:Create(v78, TweenInfo.new(5), {
                         Transparency = 1
                     }):Play()
-  
+                   function GitAud(soundgit,filename)
+    SoundName=tostring(SoundName)
+    local url=soundgit
+    local FileName = filename
+    writefile(FileName..".mp3", game:HttpGet(url))
+    return (getcustomasset or getsynasset)(FileName..".mp3")
+end
+
+function CustomGitSound(soundlink, vol, filename)
+    local sound = Instance.new("Sound")
+    sound.SoundId = GitAud(soundlink, filename)
+    sound.Parent = workspace
+    sound.Volume = 2.6
+sound.Looped = false
+   sound:Play()
+end
+
+CustomGitSound("https://raw.githubusercontent.com/Voor-Pr00/Eye/refs/heads/main/DOORS-UNUSED-SOUNDTRACK-Stress%20(mp3cut.net).mp3", 1, "crucifix")
                     local v79 = {
-                                               DefaultConfig = loadstring(game:HttpGet("https://raw.githubusercontent.com/lelele78/ProtectSecurity.18/refs/heads/main/DefautConfig"))(), Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+                        Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
                     }
                     local v80 = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
                     require(v80).camShaker:ShakeOnce(200, 5, 0.1, 0.15)
@@ -917,17 +933,16 @@ spawner.Run = function(entityTable)
                     v81.Parent = game.Workspace
                     local v82 = model
                     if typeof(v81) == "Instance" and v81.ClassName == "Model" then
-                        v81:MoveTo(v82.CommonSenseNew.CFrame.Position - Vector3.new(0, pu38.Config.HeightOffset, 0) - Vector3.new(0, 3, 0))
+                        v81:MoveTo(v82.SmilerNew.CFrame.Position - Vector3.new(0, 0.15, 0) - Vector3.new(0, 4, 0))
                         local v83 = model:Clone()
                         v83.Parent = game.Workspace
-                        v83.Name = "CommonSenseClone"
-                        v81.Entity.CFrame = v83.CommonSenseNew.CFrame
-                        vu51:Destroy()
+                        v83.Name = "SmilerClone"
+                        v81.Entity.CFrame = v83.SmilerNew.CFrame
                         v82:Destroy()
                         Color3.fromRGB()
                         local v84 = ColorSequence.new({
-                            ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
-                            ColorSequenceKeypoint.new(1, Color3.new(1, 1, 1))
+                            ColorSequenceKeypoint.new(0, Color3.new(0.4549, 0, 0)),
+                            ColorSequenceKeypoint.new(1, Color3.new(0.4549, 0, 0))
                         })
                         if true == true then
                             local v85 = next
@@ -946,18 +961,18 @@ spawner.Run = function(entityTable)
                             v81.Circle.Spark.Color = v84
                         end
                         local v89 = {
-                            Position = v83.CommonSenseNew.CFrame.Position + Vector3.new(0, 3, 0)
+                            Position = v83.SmilerNew.CFrame.Position + Vector3.new(0, 3, 0)
                         }
                         local v90 = {
-                            Position = v83.CommonSenseNew.CFrame.Position - Vector3.new(0, 18, 0)
+                            Position = v83.SmilerNew.CFrame.Position - Vector3.new(0, 18, 0)
                         }
-                        local v91 = v77:Create(v83.CommonSenseNew, TweenInfo.new(2), v89)
+                        local v91 = v77:Create(v83.SmilerNew, TweenInfo.new(2), v89)
                         local v92 = v77:Create(v81.Entity, TweenInfo.new(2), v89)
                         v91:Play()
                         v92:Play()
                         wait(2)
                         local v93 = next
-                        local v94, v95 = v83.CommonSenseNew:GetDescendants()
+                        local v94, v95 = v83.SmilerNew:GetDescendants()
                         while true do
                             local v96
                             v95, v96 = v93(v94, v95)
@@ -970,7 +985,7 @@ spawner.Run = function(entityTable)
                                 }):Play()
                             end
                         end
-                        local v97 = v77:Create(v83.CommonSenseNew, TweenInfo.new(3), v90)
+                        local v97 = v77:Create(v83.SmilerNew, TweenInfo.new(3), v90)
                         local v98 = v77:Create(v81.Entity, TweenInfo.new(3), v90)
                         v97:Play()
                         v98:Play()
@@ -978,15 +993,16 @@ spawner.Run = function(entityTable)
                         v83:Destroy()
                         v78:Destroy()
                         v81:Destroy()
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))().Get({
-                            Title = "Im just using my common sense",
-                            Desc = "Let me find the books alone.",
-                            Reason = "Used Crucifix on \'\'Common Sense\'\'",
-                            Image = "rbxassetid://11937659780"
+                       local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/Voor-Pr00/Achivements/refs/heads/main/Voorpr0"))()
+
+---====== Display achievement ======---
+achievementGiver({
+                            Title = "You put a smile on my face",
+                            Desc = "You\'re annoying.",
+                            Reason = "Used Crucifix on \'\'Smiler\'\'",
+                            Image = "rbxassetid://11417375410"
                         })
-                        
                     end
-end
 								model:SetAttribute("Damage", false)
 								DamagePlayer(entityTable)
 							end
@@ -1168,5 +1184,5 @@ if not vynixu_SpawnerLoaded then
 end
 
 -- Return spawner
-getgenv().VynixuEntitySpawnerV4 = spawner
+getgenv().VynixuEntitySpawnerV3 = spawner
 return spawner
