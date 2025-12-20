@@ -917,7 +917,7 @@ spawner.Run = function(entityTable)
                     v81.Parent = game.Workspace
                     local v82 = model
                     if typeof(v81) == "Instance" and v81.ClassName == "Model" then
-                        v81:MoveTo(v82.CommonSenseNew.CFrame.Position - Vector3.new(0, pu38.Config.HeightOffset, 0) - Vector3.new(0, 3, 0))
+                        v81:MoveTo(v82.CommonSenseNew.CFrame.Position - Vector3.new(0, 1, 0) - Vector3.new(0, 3, 0))
                         local v83 = model:Clone()
                         v83.Parent = game.Workspace
                         v83.Name = "CommonSenseClone"
