@@ -1003,6 +1003,7 @@ achievementGiver({
                             Image = "rbxassetid://11417375410"
                         })
                     end
+end
 								model:SetAttribute("Damage", false)
 								DamagePlayer(entityTable)
 							end
