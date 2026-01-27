@@ -817,7 +817,7 @@ ItemName.PrimaryPart = ItemName.RushNew
 
 -- ItemName.PrimaryPart.Idle:Destroy()
     local spawn = Instance.new("Sound")
-spawn.Parent = vu51.PrimaryPart
+spawn.Parent = model.PrimaryPart
 spawn.Name = "ReboundSpawn"
 spawn.SoundId = "rbxassetid://9114221327"
 spawn.Volume = 5
@@ -825,7 +825,7 @@ spawn.RollOffMaxDistance = 10000
 spawn.RollOffMinDistance = 450
 spawn:Play()
     local move = vu1889:Clone()
-    move.Parent = vu51.RushNew
+    move.Parent = model.RushNew
     move.Name = "ReboundMoving"
     move.Volume = 0
     move.Looped = true
