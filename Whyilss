@@ -44,8 +44,7 @@ local assets = {
 }
 local moduleScripts = {
 	Module_Events = require(ReplicatedStorage.ModulesClient.Module_Events),
-	Main_Game = require(playerGui.MainUI.Initiator.Main_Game),
-	Earthquake = require(remotesFolder.RequestAsset:InvokeServer("Earthquake"))
+	Main_Game = require(playerGui.MainUI.Initiator.Main_Game)
 }
 local defaultEntityAttributes = {
     Running = false,
@@ -101,9 +100,6 @@ local defaultConfig = {
 		},
 		Shatter = true,
 		Repair = false
-	},
-	Earthquake = {
-		Enabled = true
 	},
 	CameraShake = {
 		Enabled = true,
@@ -801,9 +797,6 @@ spawner.Run = function(entityTable)
 				end
 			end
 			-- Earthquake
-			if config.Earthquake.Enabled then
-				task.defer(moduleScripts.Earthquake, moduleScripts.Main_Game, currentRoom)
-			end
 	
 			-- Movement detection handling
 			task.wait(config.Movement.Delay)
